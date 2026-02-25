@@ -20,6 +20,7 @@
   .popup-grande {
   width: 300px;
   text-align: center;
+  font-family: sans-serif;
 }
 
 .popup-grande img {
@@ -61,17 +62,21 @@ map.fitBounds(bounds);
 L.marker([86.37305492863652,550.25]).addTo(map)
   .bindPopup(`
     <div class="popup-grande">
-      <h3>Los Santos</h3>
+      <h3>NPC Investigato</h3>
       <img src="/Mappa-NPC-Investigativa/immagini/I2OARBx.png">
+      <p class="descrizione">
+        Avvistato a Los Santos.
+      </p>
     </div>
   `, {
-    maxWidth: 500
+    maxWidth: 320   // 👈 piccolo
   });
 </script>
 
 </body>
 
 </html>
+
 
 
 

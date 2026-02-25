@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Mappa GTA V</title>
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet"
+    href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+
+  <style>
+    body {
+      margin: 0;
+    }
+
+    #map {
+      height: 100vh;
+    }
+  </style>
+</head>
+
+<body>
+
+<div id="map"></div>
+
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<script>
+
+// 1️⃣ Creiamo la mappa
+var map = L.map('map', {
+  crs: L.CRS.Simple
+});
+
+map.on('click', function(e) {
+  console.log(e.latlng);
+});
+
+
+// 2️⃣ Dimensioni immagine (IMPORTANTE)
+var bounds = [[0,0], [1000,1000]];
+
+// 3️⃣ Inseriamo immagine GTA
+var image = L.imageOverlay('mappa.jpg', bounds).addTo(map);
+
+// 4️⃣ Zoom automatico
+map.fitBounds(bounds);
+
+// 5️⃣ Primo punto interattivo
+L.marker([86.37305492863652, 550.25]).addTo(map)
+  .bindPopup("Don Giuliani");
+
+</script>
+
+</body>
+</html>

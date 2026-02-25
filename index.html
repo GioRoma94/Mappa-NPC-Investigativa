@@ -59,19 +59,21 @@ map.fitBounds(bounds);
 // 5️⃣ Primo punto interattivo
 L.marker([86.37305492863652,550.25]).addTo(map)
   .bindPopup(`
-    <div style="text-align:center;">
+    <div style="width:500px; text-align:center;">
       <h3>Los Santos</h3>
       <img src="/Mappa-NPC-Investigativa/immagini/I2OARBx.png"
-           style="width:100%; border-radius:10px;">
+           style="width:100%; border-radius:12px;">
     </div>
   `, {
-    maxWidth: 800   // 👈 qui aumenti la dimensione
+    maxWidth: 600,
+    minWidth: 500
   });
 </script>
 
 </body>
 
 </html>
+
 
 
 

@@ -9,14 +9,23 @@
     href="https://unpkg.com/leaflet/dist/leaflet.css"/>
 
   <style>
-    body {
-      margin: 0;
-    }
+  body {
+    margin: 0;
+  }
 
-    #map {
-      height: 100vh;
-    }
-  </style>
+  #map {
+    height: 100vh;
+  }
+
+  /* 👇 AGGIUNGI QUESTO */
+  .leaflet-popup-content-wrapper {
+    width: 500px !important;
+  }
+
+  .leaflet-popup-content {
+    width: 100% !important;
+  }
+</style>
 </head>
 
 <body>
@@ -63,6 +72,7 @@ L.marker([86.37305492863652,550.25]).addTo(map)
 </body>
 
 </html>
+
 
 
 

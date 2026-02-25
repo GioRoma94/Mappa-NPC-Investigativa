@@ -46,18 +46,18 @@ map.on('click', function(e) {
   console.log(e.latlng);
 });
 
-// 2️⃣ Dimensioni immagine
+// Dimensione Immagine
 var bounds = [[0,0], [1000,1000]];
 
-// 3️⃣ Inseriamo immagine GTA
+// Immagine GTA
 var image = L.imageOverlay('mappa.jpg', bounds).addTo(map);
 
-// 4️⃣ Zoom automatico
+// Zoom
 map.fitBounds(bounds);
 
 
 
-// 🎨 ICONE COLORATE
+// Icone
 
 var redIcon = new L.Icon({
   iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
@@ -78,7 +78,7 @@ var greenIcon = new L.Icon({
 });
 
 
-// 5️⃣ Punto con marker ROSSO
+// Punti
 L.marker([86.37305492863652,550.25], { icon: redIcon }).addTo(map)
   .bindPopup(`
     <div class="popup-grande">
@@ -99,6 +99,7 @@ L.marker([86.37305492863652,550.25], { icon: redIcon }).addTo(map)
 
 </body>
 </html>
+
 
 
 

@@ -48,10 +48,13 @@ var image = L.imageOverlay('mappa.jpg', bounds).addTo(map);
 map.fitBounds(bounds);
 
 // 5️⃣ Primo punto interattivo
-L.marker([86.37305492863652, 550.25]).addTo(map)
-  .bindPopup("Don Giuliani");
-
+L.marker([86.37305492863652,550.25]).addTo(map)
+  .bindPopup(`
+    <h3>Los Santos</h3>
+    <img src="Immagini/I2OARBx.png" width="250">
+  `);
 </script>
 
 </body>
+
 </html>

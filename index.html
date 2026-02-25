@@ -17,14 +17,15 @@
     height: 100vh;
   }
 
-  /* 👇 AGGIUNGI QUESTO */
-  .leaflet-popup-content-wrapper {
-    width: 500px !important;
-  }
+  .popup-grande {
+  width: 450px;
+  text-align: center;
+}
 
-  .leaflet-popup-content {
-    width: 100% !important;
-  }
+.popup-grande img {
+  width: 100%;
+  border-radius: 14px;
+}
 </style>
 </head>
 
@@ -59,20 +60,19 @@ map.fitBounds(bounds);
 // 5️⃣ Primo punto interattivo
 L.marker([86.37305492863652,550.25]).addTo(map)
   .bindPopup(`
-    <div style="width:500px; text-align:center;">
+    <div class="popup-grande">
       <h3>Los Santos</h3>
-      <img src="/Mappa-NPC-Investigativa/immagini/I2OARBx.png"
-           style="width:100%; border-radius:12px;">
+      <img src="/Mappa-NPC-Investigativa/immagini/I2OARBx.png">
     </div>
   `, {
-    maxWidth: 600,
-    minWidth: 500
+    maxWidth: 800
   });
 </script>
 
 </body>
 
 </html>
+
 
 
 

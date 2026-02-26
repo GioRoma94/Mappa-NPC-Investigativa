@@ -40,9 +40,9 @@
 // 1️⃣ Creiamo la mappa
 var map = L.map('map', {
   crs: L.CRS.Simple,
-  minZoom: -4,     // importante per immagini grandi
+  minZoom: -3,     // importante per immagini grandi
   maxZoom: 2,
-  zoomSnap: 0.25
+  zoomSnap: 0.50
 });
 
 map.on('click', function(e) {
@@ -144,6 +144,7 @@ L.marker([657.9375,677.1875], { icon: redIcon }).addTo(map)
 
 </body>
 </html>
+
 
 
 

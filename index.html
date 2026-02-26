@@ -49,11 +49,14 @@ map.on('click', function(e) {
 // Dimensione Immagine e Immagine stessa
 var bounds = [[0, 0], [4608, 3072]];
 
-var image = L.imageOverlay('mappa2.jpeg', bounds).addTo(map);
+var image = L.imageOverlay('mappa2_upscayl_2x_high-fidelity-4x.webp', bounds).addTo(map);
 
 map.fitBounds(bounds);
 
-
+var map = L.map('map', {
+  crs: L.CRS.Simple,
+  minZoom: -2
+});
 
 
 // Icone
@@ -143,6 +146,7 @@ L.marker([657.9375,677.1875], { icon: redIcon }).addTo(map)
 
 </body>
 </html>
+
 
 
 

@@ -37,24 +37,27 @@
 <!-- Leaflet JS -->
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 <script>  
-// 1️⃣ Creiamo la mappa
+// CMappa e Immagine
 var map = L.map('map', {
   crs: L.CRS.Simple,
-  minZoom: -3,     // importante per immagini grandi
-  maxZoom: 2,
-  zoomSnap: 0.50
+  minZoom: -5,
+  maxZoom: 4,
+  zoomControl: true
 });
 
-map.on('click', function(e) {
-  console.log(e.latlng);
-});
-
-// Dimensione Immagine e Immagine stessa
 var bounds = [[0, 0], [9216, 6144]];
 
 var image = L.imageOverlay('mappa2_upscayl_2x_high-fidelity-4x.webp', bounds).addTo(map);
 
-map.fitBounds(bounds);
+// Zoom
+var height = 9216;
+var containerHeight = map.getSize().y;
+
+//zoom dinamico
+var zoom = Math.log2(containerHeight / height);
+
+map.setView([height / 2, 6144 / 2], zoom);
+map.setMaxBounds(bounds);
 
 
 // Icone
@@ -79,7 +82,7 @@ var greenIcon = new L.Icon({
 
 
 // Punti
-L.marker([86.37305492863652,550.25], { icon: redIcon }).addTo(map)
+L.marker([1432.994573578279,3599.7299371132367], { icon: redIcon }).addTo(map)
   .bindPopup(`
     <div class="popup-grande">
       <h3>Don Salucci</h3>
@@ -94,7 +97,7 @@ L.marker([86.37305492863652,550.25], { icon: redIcon }).addTo(map)
   });
 
   
-L.marker([315.0625,537.125], { icon: redIcon }).addTo(map)
+L.marker([3386.687928492969,3517.1491296218874], { icon: redIcon }).addTo(map)
   .bindPopup(`
     <div class="popup-grande">
       <h3>Ricettatore</h3>
@@ -108,7 +111,7 @@ L.marker([315.0625,537.125], { icon: redIcon }).addTo(map)
     minWidth: 250
   });
 
-L.marker([603.625,679.625], { icon: redIcon }).addTo(map)
+L.marker([5849.709798698385,679.625], { icon: redIcon }).addTo(map)
   .bindPopup(`
     <div class="popup-grande">
       <h3>YouTool</h3>
@@ -144,6 +147,7 @@ L.marker([657.9375,677.1875], { icon: redIcon }).addTo(map)
 
 </body>
 </html>
+
 
 
 

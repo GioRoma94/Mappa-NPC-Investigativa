@@ -93,6 +93,20 @@ L.marker([86.37305492863652,550.25], { icon: redIcon }).addTo(map)
     minWidth: 250
   });
 
+  // Punti
+L.marker([315.0625,537.125], { icon: redIcon }).addTo(map)
+  .bindPopup(`
+    <div class="popup-grande">
+      <h3>Ricettatore</h3>
+      <img src="/Mappa-NPC-Investigativa/immagini/Screenshot 2026-02-25 163349.png">
+      <p class="descrizione">
+        Rivendita gioielli e orologi, valutazione in soldi sporchi
+      </p>
+    </div>
+  `, {
+    maxWidth: 250,
+    minWidth: 250
+  });
 
 
 
@@ -103,6 +117,7 @@ L.marker([86.37305492863652,550.25], { icon: redIcon }).addTo(map)
 
 </body>
 </html>
+
 
 
 

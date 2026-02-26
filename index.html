@@ -64,6 +64,14 @@ map.setView([imageHeight / 2, imageWidth / 2], zoom);
 map.setMaxBounds(bounds);
 
 
+  // Punto in console
+map.fitBounds(bounds);
+
+map.on('click', function(e) {
+  console.log(e.latlng);
+});
+
+
 // Icone
 
 var redIcon = new L.Icon({
@@ -151,6 +159,7 @@ L.marker([657.9375,677.1875], { icon: redIcon }).addTo(map)
 
 </body>
 </html>
+
 
 
 

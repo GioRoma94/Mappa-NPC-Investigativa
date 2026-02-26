@@ -7,27 +7,29 @@
   <!-- Leaflet CSS -->
   <link rel="stylesheet"
         href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
 
-  <style>
-    body {
-      margin: 0;
-    }
+  #map {
+    height: 100vh;
+    width: 100vw;
+  }
 
-    #map {
-      height: 100vh;
-    }
+  .popup-grande {
+    width: 250px;
+    text-align: center;
+    font-family: sans-serif;
+  }
 
-    .popup-grande {
-      width: 250px;
-      text-align: center;
-      font-family: sans-serif;
-    }
-
-    .popup-grande img {
-      width: 90%;
-      border-radius: 14px;
-    }
-  </style>
+  .popup-grande img {
+    width: 90%;
+    border-radius: 14px;
+  }
+</style>
 </head>
 
 <body>
@@ -37,26 +39,28 @@
 <!-- Leaflet JS -->
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 <script>  
-// CMappa e Immagine
+// Cappa e Immagine
 var map = L.map('map', {
   crs: L.CRS.Simple,
-  minZoom: -5,
-  maxZoom: 4,
-  zoomControl: true
+  zoomControl: true,
+  minZoom: -10,
+  maxZoom: 5
 });
 
-var bounds = [[0, 0], [9216, 6144]];
+var imageHeight = 9216;
+var imageWidth = 6144;
 
-var image = L.imageOverlay('mappa2_upscayl_2x_high-fidelity-4x.webp', bounds).addTo(map);
+var bounds = [[0, 0], [imageHeight, imageWidth]];
 
-// Zoom
-var height = 9216;
-var containerHeight = map.getSize().y;
+L.imageOverlay('mappa2_upscayl_2x_high-fidelity-4x.webp', bounds).addTo(map);
 
-//zoom dinamico
-var zoom = Math.log2(containerHeight / height);
+// calcolo zoom perfetto 
+var containerHeight = map.getContainer().clientHeight;
+var zoom = Math.log2(containerHeight / imageHeight);
 
-map.setView([height / 2, 6144 / 2], zoom);
+// centra e applica zoom
+map.setView([imageHeight / 2, imageWidth / 2], zoom);
+
 map.setMaxBounds(bounds);
 
 
@@ -147,6 +151,7 @@ L.marker([657.9375,677.1875], { icon: redIcon }).addTo(map)
 
 </body>
 </html>
+
 
 
 

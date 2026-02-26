@@ -46,14 +46,13 @@ map.on('click', function(e) {
   console.log(e.latlng);
 });
 
-// Dimensione Immagine
-var bounds = [[0,0], [1000,1000]];
+// Dimensione Immagine e Immagine stessa
+var bounds = [[0, 0], [4608, 3072]];
 
-// Immagine GTA
 var image = L.imageOverlay('mappa2.jpeg', bounds).addTo(map);
 
-// Zoom
 map.fitBounds(bounds);
+
 
 
 
@@ -144,6 +143,7 @@ L.marker([657.9375,677.1875], { icon: redIcon }).addTo(map)
 
 </body>
 </html>
+
 
 
 
